@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		063785F221F17BD600AE9DB1 /* XBZAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063785E821F17BD600AE9DB1 /* XBZAlertController.framework */; };
 		063785F721F17BD600AE9DB1 /* XBZAlertControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063785F621F17BD600AE9DB1 /* XBZAlertControllerTests.m */; };
-		063785F921F17BD600AE9DB1 /* XBZAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 063785EB21F17BD600AE9DB1 /* XBZAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0637860421F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0637860221F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h */; };
 		0637860521F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0637860321F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m */; };
 		0637860721F1807D00AE9DB1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0637860621F1807D00AE9DB1 /* LICENSE */; };
 		0637860921F1808700AE9DB1 /* XBZAlertController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0637860821F1808700AE9DB1 /* XBZAlertController.podspec */; };
+		0637864921F19BEA00AE9DB1 /* XBZAlertHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0637864821F19BEA00AE9DB1 /* XBZAlertHeader.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		063785E821F17BD600AE9DB1 /* XBZAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XBZAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		063785EB21F17BD600AE9DB1 /* XBZAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBZAlertController.h; sourceTree = "<group>"; };
 		063785EC21F17BD600AE9DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		063785F121F17BD600AE9DB1 /* XBZAlertControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBZAlertControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		063785F621F17BD600AE9DB1 /* XBZAlertControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBZAlertControllerTests.m; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		0637860321F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XBZAlertController.m"; sourceTree = "<group>"; };
 		0637860621F1807D00AE9DB1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0637860821F1808700AE9DB1 /* XBZAlertController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XBZAlertController.podspec; sourceTree = "<group>"; };
+		0637864821F19BEA00AE9DB1 /* XBZAlertHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBZAlertHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		063785EA21F17BD600AE9DB1 /* XBZAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				063785EB21F17BD600AE9DB1 /* XBZAlertController.h */,
+				0637864821F19BEA00AE9DB1 /* XBZAlertHeader.h */,
 				0637860221F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h */,
 				0637860321F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m */,
 				063785EC21F17BD600AE9DB1 /* Info.plist */,
@@ -105,8 +105,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				063785F921F17BD600AE9DB1 /* XBZAlertController.h in Headers */,
 				0637860421F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h in Headers */,
+				0637864921F19BEA00AE9DB1 /* XBZAlertHeader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
