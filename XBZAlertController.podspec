@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "XBZAlertController"
-s.version      = "1.0.0"
+s.version      = "2.0.0"
 s.ios.deployment_target = '8.0'
 s.summary      = "用于弹出系统弹出框"
 s.homepage     = "https://github.com/BigKingQY/XBZAlertController"
