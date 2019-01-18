@@ -1,0 +1,234 @@
+//
+//  UIAlertController+XBZAlertController.m
+//  XBZAlertController
+//
+//  Created by BigKing on 2019/1/18.
+//  Copyright © 2019 BigKing. All rights reserved.
+//
+
+#import "UIAlertController+XBZAlertController.h"
+
+NSTimeInterval kDefaultTimerInterval = 2.f;
+
+@implementation UIAlertController (XBZAlertController)
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title {
+    
+    [self alertWithController:controller title:title timeInterval:kDefaultTimerInterval];
+    
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+               timeInterval:(NSTimeInterval)timerInerval {
+    
+    [self alertWithController:controller title:title message:@"" timeInterval:timerInerval];
+    
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message {
+    
+    [self alertWithController:controller title:title message:message timeInterval:kDefaultTimerInterval];
+    
+}
+
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               timeInterval:(NSTimeInterval)timerInerval {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    [NSTimer scheduledTimerWithTimeInterval:timerInerval target:self selector:@selector(dismissAlertController:) userInfo:alertController repeats:NO];
+    
+    [controller presentViewController:alertController animated:YES completion:nil];
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionTwo)actionTwo {
+    
+    [self alertWithController:controller title:title message:message actionTitles:titles actionOne:actionOne actionTwo:actionTwo isAlertStyle:YES];
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionTwo)actionTwo
+                  tintColor:(UIColor *)tintColor {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    switch (titles.count) {
+            break;
+        case 1:
+        {
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (actionOne) {
+                    actionOne();
+                }
+            }]];
+        }
+            break;
+        case 2:
+        {
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (actionOne) {
+                    actionOne();
+                }
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.lastObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (actionTwo) {
+                    actionTwo();
+                }
+            }]];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:title];
+    [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, [[attri string] length])];
+    [attri addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:51.f/255 green:51.f/255 blue:51.f/255 alpha:1.f] range:NSMakeRange(0, [[attri string] length])];
+    [alertController setValue:attri forKey:@"attributedTitle"];
+    
+    alertController.view.tintColor = tintColor;
+    
+    
+    [controller presentViewController:alertController animated:YES completion:nil];
+    
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionTwo)actionTwo
+               isAlertStyle:(BOOL)isAlertStyle; {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:isAlertStyle ? UIAlertControllerStyleAlert : UIAlertControllerStyleActionSheet];
+    
+    switch (titles.count) {
+            break;
+        case 1:
+        {
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (actionOne) {
+                    actionOne();
+                }
+            }]];
+        }
+            break;
+        case 2:
+        {
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (actionOne) {
+                    actionOne();
+                }
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.lastObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (actionTwo) {
+                    actionTwo();
+                }
+            }]];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+    if (!isAlertStyle) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL]];
+    }
+    
+    [controller presentViewController:alertController animated:YES completion:nil];
+}
+
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+               actionStyles:(NSArray<NSNumber *> *)actionStyles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionOne)actionTwo {
+    
+    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:actionStyles actionOne:actionOne actionTwo:actionTwo isAlertStyle:YES];
+    
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+               actionStyles:(NSArray<NSNumber *> *)actionStyles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionOne)actionTwo
+               isAlertStyle:(BOOL)isAlertStyle {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:isAlertStyle ? UIAlertControllerStyleAlert : UIAlertControllerStyleActionSheet];
+    
+    switch (titles.count) {
+            break;
+        case 1:
+        {
+            UIAlertActionStyle style = actionStyles.firstObject ? [actionStyles.firstObject integerValue] : UIAlertActionStyleDefault;
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:style handler:^(UIAlertAction * _Nonnull action) {
+                if (actionOne) {
+                    actionOne();
+                }
+            }]];
+        }
+            break;
+        case 2:
+        {
+            UIAlertActionStyle styleOne = actionStyles.firstObject ? [actionStyles.firstObject integerValue] : UIAlertActionStyleDefault;
+            UIAlertActionStyle styleTwo = actionStyles.lastObject ? [actionStyles.lastObject integerValue] : UIAlertActionStyleDefault;
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:styleOne handler:^(UIAlertAction * _Nonnull action) {
+                if (actionOne) {
+                    actionOne();
+                }
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:titles.lastObject style:styleTwo handler:^(UIAlertAction * _Nonnull action) {
+                if (actionTwo) {
+                    actionTwo();
+                }
+            }]];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+    if (!isAlertStyle) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL]];
+    }
+    
+    [controller presentViewController:alertController animated:YES completion:nil];
+    
+}
+
++ (void)dismissAlertController:(NSTimer *)timer {
+    
+    UIAlertController *alertController = timer.userInfo;
+    
+    [alertController dismissViewControllerAnimated:YES completion:nil];
+    
+    [timer invalidate];
+    timer = nil;
+}
+
+@end
