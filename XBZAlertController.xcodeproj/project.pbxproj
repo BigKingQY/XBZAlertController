@@ -13,6 +13,7 @@
 		0637860921F1808700AE9DB1 /* XBZAlertController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0637860821F1808700AE9DB1 /* XBZAlertController.podspec */; };
 		0637864C21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0637864A21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.h */; };
 		0637864D21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0637864B21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.m */; };
+		0637865121F1A1AC00AE9DB1 /* XBZAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0637865021F1A1AC00AE9DB1 /* XBZAlertController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		0637860821F1808700AE9DB1 /* XBZAlertController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XBZAlertController.podspec; sourceTree = "<group>"; };
 		0637864A21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+XBZAlertController.h"; sourceTree = "<group>"; };
 		0637864B21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XBZAlertController.m"; sourceTree = "<group>"; };
+		0637865021F1A1AC00AE9DB1 /* XBZAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBZAlertController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				063785EC21F17BD600AE9DB1 /* Info.plist */,
+				0637865021F1A1AC00AE9DB1 /* XBZAlertController.h */,
 				0637864A21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.h */,
 				0637864B21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.m */,
 			);
@@ -103,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0637864C21F19E1100AE9DB1 /* UIAlertController+XBZAlertController.h in Headers */,
+				0637865121F1A1AC00AE9DB1 /* XBZAlertController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
