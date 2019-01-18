@@ -9,6 +9,6 @@
 #ifndef XBZAlertHeader_h
 #define XBZAlertHeader_h
 
-#import "UIAlertController+XBZAlertController.h"
+#import <UIAlertController/UIAlertController+XBZAlertController.h>
 
 #endif /* XBZAlertHeader_h */
