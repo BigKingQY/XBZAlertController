@@ -12,6 +12,8 @@
 		063785F921F17BD600AE9DB1 /* XBZAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 063785EB21F17BD600AE9DB1 /* XBZAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0637860421F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0637860221F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h */; };
 		0637860521F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0637860321F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m */; };
+		0637860721F1807D00AE9DB1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0637860621F1807D00AE9DB1 /* LICENSE */; };
+		0637860921F1808700AE9DB1 /* XBZAlertController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0637860821F1808700AE9DB1 /* XBZAlertController.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		063785F821F17BD600AE9DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0637860221F17BF800AE9DB1 /* UIAlertController+XBZAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+XBZAlertController.h"; sourceTree = "<group>"; };
 		0637860321F17BF800AE9DB1 /* UIAlertController+XBZAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XBZAlertController.m"; sourceTree = "<group>"; };
+		0637860621F1807D00AE9DB1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0637860821F1808700AE9DB1 /* XBZAlertController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XBZAlertController.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 		063785DE21F17BD600AE9DB1 = {
 			isa = PBXGroup;
 			children = (
+				0637860621F1807D00AE9DB1 /* LICENSE */,
+				0637860821F1808700AE9DB1 /* XBZAlertController.podspec */,
 				063785EA21F17BD600AE9DB1 /* XBZAlertController */,
 				063785F521F17BD600AE9DB1 /* XBZAlertControllerTests */,
 				063785E921F17BD600AE9DB1 /* Products */,
@@ -183,6 +189,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0637860921F1808700AE9DB1 /* XBZAlertController.podspec in Resources */,
+				0637860721F1807D00AE9DB1 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
